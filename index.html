@@ -111,11 +111,13 @@
     // ── Add new maps here ──────────────────────────────────────────────
     // One line per map, in any order: the list sorts itself by day.
     // Several maps can share the same day.
+    // `theme` (the day's challenge prompt) is optional.
     const MAPS = [
       { day: 1, title: "Time Zone Inversions",  author: "Alan McConchie", url: "https://mappingmashups.github.io/time-zone-inversions/" },
       { day: 2, title: "Interrupted Contours",  author: "Alan McConchie", url: "https://mappingmashups.github.io/contourvolution/" },
       { day: 3, title: "Voronoi Highways",      author: "Alan McConchie", url: "https://mappingmashups.github.io/voronoi-highways/" },
       { day: 4, title: "Candy Clusters",        author: "Kelsey Taylor",  url: "https://stamen.github.io/candy-clusters/" },
+      { day: 5, title: "Viewshed Viewer",       author: "Alex Parlato",   url: "https://stamen.github.io/30-day-map-viewshed/", theme: "Sight" },
     ];
     // ───────────────────────────────────────────────────────────────────
 
@@ -138,7 +140,7 @@
         name.textContent = m.title;
         const meta = document.createElement("span");
         meta.className = "meta";
-        meta.textContent = m.author;
+        meta.textContent = m.theme ? m.theme + " · " + m.author : m.author;
         text.append(name, meta);
 
         const arrow = document.createElement("span");
