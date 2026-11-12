@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power Grab</title>
+  <meta name="description" content="A #30DayMapChallenge map by Nicolette Hayes: which party held the presidency, the Senate, the House and the Supreme Court every year from 1970 to 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stamen #30DayMapChallenge">
+  <meta property="og:title" content="Power Grab">
+  <meta property="og:description" content="A #30DayMapChallenge map by Nicolette Hayes: which party held the presidency, the Senate, the House and the Supreme Court every year from 1970 to 2026.">
+  <meta property="og:url" content="https://stamen.github.io/30-day-map-challenge-2026/power-grab/">
+  <meta property="og:image" content="https://stamen.github.io/30-day-map-challenge-2026/power-grab/social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Power Grab: yearly panels showing which party controlled each branch of the US government, 1970s to 2020s.">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root {
+      --bg: #fff;
+      --fg: #000;
+      --hl: #ffff00;
+      --hl-fg: #000;
+      --box: #000;
+      --box-fg: #fff;
+      --muted: #555;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000;
+        --fg: #fff;
+        --box: #fff;
+        --box-fg: #000;
+        --muted: #aaa;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 18px/1.45 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    main, .col {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 4rem 1rem 3rem;
+    }
+    h1 {
+      font-size: min(4rem, calc((min(100vw, 44rem) - 2rem) / 11.5));
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.5rem;
+      overflow-wrap: anywhere;
+    }
+    .hl {
+      background: var(--hl);
+      color: var(--hl-fg);
+      padding: 0 0.12em;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+    .lede { font-size: 1.15rem; margin: 0 0 3rem; max-width: 34rem; }
+    a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    a:hover, a:focus-visible { background: var(--hl); color: var(--hl-fg); }
+    h2 {
+      display: inline-block;
+      background: var(--box);
+      color: var(--box-fg);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.35rem 0.7rem;
+      margin: 0;
+    }
+    ul { list-style: none; margin: 0; padding: 0; border-top: 4px solid var(--fg); }
+    li { border-bottom: 2px solid var(--fg); }
+    li a {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 0 1rem;
+      padding: 1rem 0.5rem;
+      text-decoration: none;
+    }
+    ul.maps li a { grid-template-columns: 4.25rem 1fr auto; }
+    .day {
+      justify-self: start;
+      background: var(--box);
+      color: var(--box-fg);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.2rem 0.5rem;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+    li a:hover .day, li a:focus-visible .day { background: var(--hl-fg); color: var(--hl); }
+    .name { display: block; font-weight: 700; font-size: 1.35rem; line-height: 1.2; }
+    .meta { display: block; font-size: 1rem; }
+    .arrow { font-weight: 700; font-size: 1.35rem; }
+    footer { margin-top: 3rem; font-weight: 700; }
+    main { padding-bottom: 0; }
+    footer.col { padding-top: 0; margin-top: 3rem; }
+    .wide { max-width: 80rem; margin: 2.5rem auto 0; padding: 0 1rem; }
+    figure { margin: 0; }
+    figure img { display: block; width: 100%; height: auto; }
+    figcaption { margin-top: 1.5rem; }
+    figcaption .lede { margin: 0 0 1rem; }
+    .credit { margin: 0; font-size: 1rem; }
+    .byline { margin: 0; }
+    .back { display: inline-block; font-weight: 700; margin-bottom: 2.5rem; }
+    .sheets { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+    .sheets figcaption { margin-top: 0.5rem; font-weight: 700; }
+    .overview { max-width: 64rem; }
+    .howto .lede { margin-bottom: 2rem; }
+    .howto { max-width: 44rem; margin: 2.5rem auto 0; padding: 0 1rem; }
+    .howto h2 { margin-bottom: 1rem; }
+    .howto ul { list-style: none; padding: 0; margin: 0; border: 0; }
+    .howto li { border: 0; padding: 0.35rem 0; font-size: 1.1rem; }
+    .howto b { background: var(--box); color: var(--box-fg); padding: 0.05rem 0.4rem; margin-right: 0.35rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="../">← Stamen #30DayMapChallenge</a>
+    <h1><span class="hl">Power Grab</span></h1>
+    <p class="byline"><span class="day">Day 12</span> Power · Nicolette Hayes</p>
+  </main>
+
+  <div class="wide overview">
+    <figure>
+      <a href="power-grab-1970-2026.webp">
+        <img src="power-grab-1970-2026.webp" width="1934" height="1934" alt="A grid of 57 small panels, one per year from 1970 to 2026, arranged by decade. Each panel's background shows the president's party, two US maps show the Senate and House majorities, and its border shows the Supreme Court majority, in red for Republican, blue for Democratic and gray for no majority.">
+      </a>
+      <figcaption><p class="credit">Select any image to open it at full size.</p></figcaption>
+    </figure>
+  </div>
+
+  <section class="howto">
+    <p class="lede">Which party held each branch of the US government, every February from 1970 to 2026? Each year is one panel, in a column for its decade.</p>
+    <h2>How to read a panel</h2>
+    <ul>
+      <li><b>Background</b> Executive: the president’s party</li>
+      <li><b>Left map</b> Legislative: the Senate majority</li>
+      <li><b>Right map</b> Legislative: the House majority</li>
+      <li><b>Border</b> Judicial: the Supreme Court majority, by the party of the appointing president</li>
+    </ul>
+    <p>Red is a Republican majority, blue a Democratic one, and gray means no majority. Each branch is shown winner-take-all.</p>
+  </section>
+
+  <div class="wide">
+    <div class="sheets">
+      <figure>
+        <a href="power-grab-2001-2008.webp"><img src="power-grab-2001-2008.webp" width="2000" height="2000" loading="lazy"
+             alt="Power Grab, 2001 to 2008: eight larger yearly panels with each branch's seat counts, such as Senate and House membership and the number of Republican- and Democrat-appointed justices."></a>
+        <figcaption>2001–2008</figcaption>
+      </figure>
+      <figure>
+        <a href="power-grab-2009-2016.webp"><img src="power-grab-2009-2016.webp" width="2000" height="2000" loading="lazy"
+             alt="Power Grab, 2009 to 2016: eight larger yearly panels with each branch's seat counts, such as Senate and House membership and the number of Republican- and Democrat-appointed justices."></a>
+        <figcaption>2009–2016</figcaption>
+      </figure>
+      <figure>
+        <a href="power-grab-2017-2024.webp"><img src="power-grab-2017-2024.webp" width="2000" height="2000" loading="lazy"
+             alt="Power Grab, 2017 to 2024: eight larger yearly panels with each branch's seat counts, such as Senate and House membership and the number of Republican- and Democrat-appointed justices."></a>
+        <figcaption>2017–2024</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <footer class="col">
+    <a href="https://github.com/stamen">github.com/stamen</a>
+  </footer>
+</body>
+</html>
